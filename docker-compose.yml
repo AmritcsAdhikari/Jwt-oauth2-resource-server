@@ -1,0 +1,16 @@
+version: "4"
+name: 'JWT-Oauth2-resource-server'
+
+services:
+  mysql-db:
+    image: mysql:8
+    container_name: mysql-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_DATABASE=jwt-demo
+    ports:
+      - "3316:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
